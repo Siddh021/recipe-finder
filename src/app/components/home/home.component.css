@@ -1,0 +1,369 @@
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: visible; 
+}
+
+.hero-section h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  color: white;
+}
+
+.hero-section .lead {
+  color: rgba(255,255,255,0.9);
+}
+
+.hero-section .btn {
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  border: 2px solid white !important;
+  color: white !important;
+  background-color: transparent !important;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-section .btn-link {
+  color: white;
+  text-decoration: none;
+  padding: 12px 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-section .btn-link:hover {
+  color: rgba(255,255,255,0.8);
+  text-decoration: underline;
+}
+
+.hero-section .btn-outline-light {
+  border: 2px solid white;
+  color: white;
+  background-color: transparent;
+}
+
+.hero-section .btn-outline-light:hover {
+  background-color: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.hero-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.hero-image-container:hover {
+  transform: scale(1.02);
+}
+
+.hero-image-container img {
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.hero-image-container:hover img {
+  transform: scale(1.05);
+}
+
+.badge-absolute {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  background: rgba(0, 128, 0, 0.9);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.category-card {
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  background: white;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15) !important;
+}
+
+.category-icon {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.category-card .btn {
+  border-radius: 20px;
+  font-weight: 500;
+  border: 2px solid;
+}
+
+.category-card .btn:hover {
+  transform: scale(1.05);
+}
+
+.featured-img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px 0 0 15px !important;
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+.faq-container {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.faq-item {
+  background: #f8f9fa;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+}
+
+.faq-item:hover {
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.faq-item.faq-item-active {
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 1px solid #667eea;
+}
+
+.faq-header {
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.faq-header:hover {
+  background: #e9ecef;
+}
+
+.faq-header .bi {
+  font-size: 1.2rem;
+  color: #667eea;
+  transition: transform 0.3s ease;
+}
+
+.faq-header .bi.bi-chevron-up {
+  transform: rotate(180deg);
+}
+
+.faq-header .bi.bi-chevron-down {
+  transform: rotate(0deg);
+}
+
+.faq-header:hover .bi {
+  color: #5a6fd8;
+}
+
+.faq-title {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.faq-body {
+  padding: 0 1.5rem 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: white;
+}
+
+.faq-body.faq-body-show {
+  max-height: 500px;
+  padding: 1.5rem;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faq-body p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  
+  .faq-header {
+    padding: 1rem;
+  }
+  
+  .faq-body {
+    padding: 1rem;
+  }
+  
+  .faq-title {
+    font-size: 1rem;
+  }
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.faq-header:hover::after {
+  opacity: 1;
+}
+
+.faq-item:not(.faq-item-active) .faq-body {
+  padding: 0 1.5rem 0;
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+}
+
+.bg-gradient .btn {
+  background-color: white;
+  color: #4e54c8;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.bg-gradient .btn:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.bg-gradient .btn-outline-light {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.bg-gradient .btn-outline-light:hover {
+  background-color: white;
+  color: #4e54c8;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .category-card {
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .d-flex.flex-wrap {
+    flex-direction: column !important;
+  }
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+h2 {
+  font-weight: 700;
+  color: #333;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 40%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.accordion {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.hero-section * {
+  position: relative;
+  z-index: 10;
+}
