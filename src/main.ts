@@ -8,6 +8,7 @@ bootstrapApplication(AppComponent, {
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', loadComponent: () => import('./app/components/home/home.component').then(m => m.HomeComponent) },
       { path: 'recipes', loadComponent: () => import('./app/components/recipes/recipes.component').then(m => m.RecipesComponent) },
+      { path: 'recipe/:id', loadComponent: () => import('./app/components/recipe-detail/recipe-detail.component').then(m => m.RecipeDetailComponent) },
       { path: '**', redirectTo: '/home' }
     ])
   ]
