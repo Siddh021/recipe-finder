@@ -7,6 +7,7 @@ bootstrapApplication(AppComponent, {
     provideRouter([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', loadComponent: () => import('./app/components/home/home.component').then(m => m.HomeComponent) },
+      { path: 'recipes', loadComponent: () => import('./app/components/recipes/recipes.component').then(m => m.RecipesComponent) },
       { path: '**', redirectTo: '/home' }
     ])
   ]
