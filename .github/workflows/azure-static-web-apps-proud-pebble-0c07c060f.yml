@@ -27,14 +27,27 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: |
-          npm ci
-          npm install -g @angular/cli
+        run: npm ci
       
       - name: Build Angular app
-        run: npm run build
+        run: npm run build -- --configuration production
         env:
           CI: true
+      
+      - name: Debug - List dist contents
+        run: |
+          echo "=== Full dist structure ==="
+          find dist -type f -name "*.html" | head -20
+          echo "=== Browser folder contents ==="
+          ls -la dist/recipefinder/browser/ || echo "Browser folder not found"
+          echo "=== Checking for index.html ==="
+          find dist -name "index.html"
+      
+      - name: Copy staticwebapp.config.json to output
+        run: |
+          if [ -f staticwebapp.config.json ]; then
+            cp staticwebapp.config.json dist/recipefinder/browser/
+          fi
       
       - name: Build And Deploy
         id: builddeploy
@@ -47,7 +60,6 @@ jobs:
           api_location: ""
           output_location: "dist/recipefinder/browser"
           skip_app_build: true
-          app_build_command: 'npm run build'
           
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
