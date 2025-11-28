@@ -19,20 +19,20 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "index": "src/index.html",  // Add this line explicitly
+            "index": "src/index.html", 
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
               },
               "src/assets",
-              "src/favicon.ico"  // Add favicon
+              "src/favicon.ico"  
             ],
             "styles": [
               "src/styles.scss"
             ],
             "server": "src/main.server.ts",
-            "outputPath": "dist/recipefinder",  // Add this
+            "outputPath": "dist/recipefinder", 
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
