@@ -1,17 +1,8 @@
 {
   "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/api/*", "/assets/*", "/*.css", "/*.js", "/*.ico", "/*.png", "/*.jpg", "/*.svg"]
+    "rewrite": "/index.html"
   },
   "platform": {
-    "apiRuntime": "node:18"
-  },
-  "globalHeaders": {
-    "Cache-Control": "public, max-age=3600"
-  },
-  "mimeTypes": {
-    ".json": "application/json",
-    ".js": "text/javascript",
-    ".mjs": "text/javascript"
+    "apiRuntime": "node:20"
   }
 }
