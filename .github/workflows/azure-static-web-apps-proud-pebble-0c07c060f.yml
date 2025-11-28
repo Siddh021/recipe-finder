@@ -34,15 +34,6 @@ jobs:
         env:
           CI: true
       
-      - name: Debug - List dist contents
-        run: |
-          echo "=== Full dist structure ==="
-          find dist -type f -name "*.html" | head -20
-          echo "=== Browser folder contents ==="
-          ls -la dist/recipefinder/browser/ || echo "Browser folder not found"
-          echo "=== Checking for index.html ==="
-          find dist -name "index.html"
-      
       - name: Copy staticwebapp.config.json to output
         run: |
           if [ -f staticwebapp.config.json ]; then
@@ -56,9 +47,9 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PROUD_PEBBLE_0C07C060F }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/"
+          app_location: "dist/recipefinder/browser"  # CHANGED: Point directly to the built files
           api_location: ""
-          output_location: "dist/recipefinder/browser"
+          output_location: ""  # CHANGED: Leave empty since app_location points to built files
           skip_app_build: true
           
   close_pull_request_job:
