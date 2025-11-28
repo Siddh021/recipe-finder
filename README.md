@@ -101,4 +101,8 @@ The live version of the project can be accessed at:
 * **Home Page** – Explore categories and get started.
 * **Recipes Page** – Browse all recipes with search & filter support.
 * **Recipe Detail Page** – View complete recipe information.
+<<<<<<< Updated upstream
 * **About Page** – Learn more about the app and its purpose.
+=======
+* **About Page** – Learn more about the app and its purpose.
+>>>>>>> Stashed changes
