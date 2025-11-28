@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:recipefinder": "node dist/recipefinder/server/server.mjs",
-    "build:swa": "ng build --configuration production --ssr false --output-path dist/static"
+     "build:swa": "ng build --configuration static"
   },
   "prettier": {
     "printWidth": 100,

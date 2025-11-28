@@ -38,10 +38,12 @@ jobs:
       
       - name: List output files
         run: |
-          echo "Contents of dist/static:"
-          ls -la dist/static/
-          echo "Checking for index.html:"
-          test -f dist/static/index.html && echo "✓ index.html found" || echo "✗ index.html not found"
+          echo "Contents of dist:"
+          ls -la dist/
+          echo "Contents of dist/recipefinder:"
+          ls -la dist/recipefinder/ || true
+          echo "Contents of dist/recipefinder/browser:"
+          ls -la dist/recipefinder/browser/ || true
       
       - name: Build And Deploy
         id: builddeploy
@@ -50,7 +52,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PROUD_PEBBLE_0C07C060F }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "dist/static"
+          app_location: "dist/recipefinder"
           api_location: ""
           output_location: ""
           skip_app_build: true
