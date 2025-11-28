@@ -2,7 +2,7 @@
   "name": "recipefinder",
   "version": "0.0.0",
   "engines": {
-    "node": ">=20.19.0"
+    "node": "20.x"
   },
   "scripts": {
     "ng": "ng",
