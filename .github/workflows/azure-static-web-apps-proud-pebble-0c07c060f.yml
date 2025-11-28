@@ -29,16 +29,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Build Angular app
-        run: npm run build -- --configuration production
-        env:
-          CI: true
+      - name: Build Angular app (Static)
+        run: npm run build:swa
       
-      - name: Copy staticwebapp.config.json to output
+      - name: Copy config file
         run: |
-          if [ -f staticwebapp.config.json ]; then
-            cp staticwebapp.config.json dist/recipefinder/browser/
-          fi
+          cp staticwebapp.config.json dist/static/ || true
+      
+      - name: List output files
+        run: |
+          echo "Contents of dist/static:"
+          ls -la dist/static/
+          echo "Checking for index.html:"
+          test -f dist/static/index.html && echo "✓ index.html found" || echo "✗ index.html not found"
       
       - name: Build And Deploy
         id: builddeploy
@@ -47,9 +50,9 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PROUD_PEBBLE_0C07C060F }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "dist/recipefinder/browser"  # CHANGED: Point directly to the built files
+          app_location: "dist/static"
           api_location: ""
-          output_location: ""  # CHANGED: Leave empty since app_location points to built files
+          output_location: ""
           skip_app_build: true
           
   close_pull_request_job:

@@ -1,8 +1,9 @@
 {
   "navigationFallback": {
-    "rewrite": "/index.html"
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{png,jpg,gif}", "/css/*", "*.{css,scss,js,png,jpg,gif,ico,svg}"]
   },
-  "platform": {
-    "apiRuntime": "node:20"
+  "globalHeaders": {
+    "content-security-policy": "default-src https: 'unsafe-inline' 'unsafe-eval'; script-src https: 'unsafe-inline' 'unsafe-eval'; style-src https: 'unsafe-inline';"
   }
 }
